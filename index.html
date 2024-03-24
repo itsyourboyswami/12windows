@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Start CMD File</title>
+</head>
+<body>
+
+<h1>Click the button to start the CMD file</h1>
+
+<button id="startButton">Start CMD</button>
+
+<script>
+document.getElementById("startButton").addEventListener("click", function() {
+    // Specify the folder location where start.cmd file exists
+    var folderPath = "path/to/your/folder/";
+    
+    // Specify the name of the cmd file
+    var cmdFileName = "start.cmd";
+
+    // Create a new ActiveXObject for running cmd file (works only in IE)
+    var shell = new ActiveXObject("WScript.Shell");
+    
+    // Run the cmd file
+    shell.run(folderPath + cmdFileName);
+});
+</script>
+
+</body>
+</html>
